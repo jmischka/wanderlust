@@ -1,10 +1,5 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  background-color: #261A23;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,25 +9,515 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 12px;
+  background-color: #0D0C0B;
+  z-index: 100;
+}
+
+.App-footer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: auto;
+  padding: 12px;
+  background-color: #0D0C0B;
+}
+
+.App-header h1,
+.App-footer a {
+  color: #D4003B;
+}
+
+.App-footer a {
+  font-size: 1.6em;
+  line-height: 1;
+  text-decoration: underline;
+  transition-duration: .5s;
+}
+
+.App-footer a:hover {
+  color: #2EFF3C;
+}
+
+.App-header span {
+  display: none;
+  margin: 0 0 0 0;
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1;
+  color: #FF2E7D;
+  cursor: pointer;
+  transition-duration: .3s;
+}
+
+.App-header span:hover {
+  color: #2EFF3C;
+}
+
+.splash-section {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 100px 0 0;
+  background: #ff2e7d; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #ff2e7d 0%, #7e208f 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #ff2e7d 0%,#7e208f 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #ff2e7d 0%,#7e208f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff2e7d', endColorstr='#7e208f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.splash-section span {
+  display: block;
+  margin: 0 0 0 0;
+  font-size: calc(100px + (400 - 100) * ((100vw - 320px) / (1600 - 320)));
+  font-weight: 600;
+  line-height: .75;
+  letter-spacing: -5px;
+  color: #0D0C0B;
+}
+
+.splash-intro {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 75px 0 0 0;
+  border-top: 12px solid #0D0C0B;
+}
+
+.intro-text {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 66.666%;
+  height: auto;
+  padding: 75px;
+  border-right: 12px solid #0D0C0B;
+}
+
+.splash-intro figure {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 33.333%;
+  height: auto;
+  padding: 0 0 0 0;
+}
+
+.splash-intro figure img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 75%;
+  width: auto;
+  max-width: none;
+  transform: translate(-50%,-50%)
+}
+
+.splash-intro p {
+  margin: 0 0 0 0;
+  font-family: 'Great Vibes', cursive;
+  font-size: 12em;
+  line-height: .9;
+  text-align: center;
+  color: #0D0C0B;
+}
+
+.news-section {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: auto;
   min-height: 100vh;
+  padding: 135px 25px 0;
+  background-color: #261A23;
+}
+
+.news-section h2 {
+  position: absolute;
+  margin: 0 0 0 0;
+  left: 25px;
+  top: 25px;
+  font-size: 5em;
+  font-weight: 600;
+  line-height: .8;
+  color: #FF2E7D;
+  padding: 25px;
+  border: 2px solid #FF2E7D;
+}
+
+.news-section p {
+  position: relative;
+  margin: 0 0 0 0;
+  font-size: 2.4em;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #FF2E7D;
+}
+
+.newsArticle-Container {
+  position: relative;
+  margin: 75px auto;
+  width: 100%;
+  height: auto;
+  max-width: 2000px;
+  padding: 0 50px 0 0;
+}
+
+.booking-section {
+  position: fixed;
+  margin: 0 0 0 0;
+  left: 100%;
+  top: 0;
+  width: 75%;
+  height: 100vh;
+  padding-top: 50px;
+  background-color: white;
+  transition-duration: .5s;
+  transition-timing-function: ease-in;
+  box-shadow: -10px 0 20px rgba(13,12,11,.4);
+}
+
+.booking-sectionHead {
+  position: relative;
+  margin: 0 0 16px 0;
+  width: 100%;
+  height: auto;
+  padding: 0 35px;
+  font-size: 10em;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: #0D0C0B;
+  /* color: #4A1170; */
+  opacity: .2;
+}
+
+.booking-window {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: calc(100vh - 175px);
+  /* border: 1px dotted black; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.booking-content {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  padding: 12px 35px 35px;
+}
+
+.booking-content p {
+  position: relative;
+  margin: 0 0 1.5em 0;
+  font-size: 2.5em;
+  line-height: 1;
+  font-weight: 600;
+  color: #12BFE6;
+}
+
+.booking-content p span {
+  text-decoration: underline;
+  cursor: pointer;
+  transition-duration: .5s;
+}
+
+.booking-content p span:hover {
+  color: #0D8AA6;
+}
+
+.booking-section.triggered {
+  left: 25%;
+}
+
+.booking-trigger {
+  position: absolute;
+  display: block;
+  left: -162px;
+  top: 259px;
+  width: 275px;
+  padding: 16px 0 12px;
+  font-size: 2em;
+  line-height: 1;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  transform-origin: center;
+  transform: rotate(-90deg);
+  border: 8px solid #0D0C0B; 
+  cursor: pointer;
+  background-color: transparent;
+  transition-duration: .75s;
+}
+
+.booking-trigger.scrolled {
+  background-color: #D121FF;
+}
+
+.booking-trigger:hover {
+  background-color: #14D4FF;
+  border: 8px solid #14D4FF;
+}
+
+.booking-trigger.triggered {
+  background-color: #2EFF3C;
+  border: 8px solid #2EFF3C;
+}
+
+.surprise-container {
+  position: relative;
+  display: none;
+  margin: 25px 0 50px 0;
+  width: 100%;
+  height: auto;
+  max-width: 700px;
+  animation: fadeUp .7s ease-out;
+}
+
+.surprise-image {
+  display: block;
+  margin: 0 0 20px 0;
+  width: 100%;
+  height: auto;
+}
+
+.surprise {
+  position: relative;
+  display: block;
+  margin: 0 0 9px 0;
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 1;
+  color: black;
+}
+
+.surprise-text {
+  position: relative;
+  display: block;
+  margin: 0 0 0 0;
+  font-size: 1.7em;
+  font-weight: 400;
+  line-height: 1.3;
+  color: black;
+}
+
+.booking-searchContainer {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: auto;
+  padding: 25px;
+  background-color: #F0F0F0;
+}
+
+.news-article {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: auto;
+  text-decoration: none;
+}
+
+.news-img {
+  position: relative;
+  margin: 0 0 0 0;
+  width: calc((100%/12) * 9);
+  height: auto;
+}
+
+.news-text {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 0 0 0 0;
+  width: calc((100%/12) * 3);
+  height: auto;
+  padding: 25px;
+  background-color: #261A23;
+  transition-duration: 1s;
+}
+
+.news-article:hover .news-text {
+  background-color: #4D1D41;
+}
+
+.news-section .news-article:nth-child(odd) .news-img,
+.news-section .news-article:nth-child(even) .news-text {
+  order: 2;
+}
+
+.news-section .news-article:nth-child(odd) .news-text,
+.news-section .news-article:nth-child(even) .news-img {
+  order: 1;
+}
+
+.newsImg-container {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: 0;
+  padding-bottom: 66.666%;
+}
+
+.newsArticle-img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+} 
+
+.news-articleHeadline {
+  display: block;
+  margin: 0 0 12px 0;
+  font-size: 4em;
+  line-height: 1;
+  font-weight: 600;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.news-text p.news-articleSubhead {
+  margin: 0 0 12px 0;
+  font-size: 1.8em;
+  line-height: 1.3;
+  font-weight: 400;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.news-articleByline {
+  display: block;
+  margin: 0 0 0 0;
+  font-size: 1.4em;
+  line-height: 1.3;
+  font-weight: 400;
+  color: white;
+  font-style: italic;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .splash-intro p {
+    font-size: 10em;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .intro-text {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 12px solid #0D0C0B;
+  }
+  
+  .splash-intro figure {
+    width: 100%;
+    height: 0;
+    padding: 0 0 100% 0;
+  }
+  
+  .news-article {
+    margin: 0 0 50px 0;
+  }
+  
+  .news-img,
+  .news-text {
+    width: 100%;
+  }
+
+  .news-section .news-article:nth-child(odd) .news-img,
+  .news-section .news-article:nth-child(even) .news-img {
+    order: 1;
+  }
+
+  .news-section .news-article:nth-child(odd) .news-text,
+  .news-section .news-article:nth-child(odd) .news-text {
+    order: 2;
+  }
+
+  .newsArticle-img {
+    background-attachment: scroll;
+  } 
+}
+
+@media screen and (max-width: 768px) {
+  .splash-section {
+    padding: 190px 0 0;
+  }
+    
+}
+
+@media screen and (max-width: 600px) {
+  .App-header {
+    justify-content: space-between;
+  }
+
+  .App-header span {
+    display: block;
+  }
+
+  .splash-section {
+    padding: 130px 0 0;
+  }
+  
+  .splash-intro p {
+    font-size: 5em;
+  }
+
+  .news-section h2 {
+    font-size: 3.3em;
+  }
+
+  .newsArticle-Container {
+    padding: 0 0 0 0;
+  }
+
+  .booking-section {
+    width: 95%;
+  }
+
+  .booking-section.triggered {
+    left: 5%;
+  }
+
+  .booking-sectionHead {
+    font-size: 6em;
+  }
+
+  .booking-trigger {
+    display: none;
   }
 }
